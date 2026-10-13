@@ -1,0 +1,9 @@
+node_modules
+data
+.env
+.git
+tests
+docs
+examples
+*.md
+public/css/app.css

@@ -1,0 +1,17 @@
+services:
+  plappy-bird:
+    build: .
+    image: plappy-bird:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATA_DIR: /data
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    volumes:
+      - plappy-data:/data
+
+volumes:
+  plappy-data:

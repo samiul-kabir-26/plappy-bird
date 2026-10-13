@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <title>Plappy Bird</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23f6c026' stroke='%23533846' stroke-width='3'/%3E%3Ccircle cx='21' cy='13' r='3' fill='%23533846'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="h-dvh touch-none select-none overflow-hidden overscroll-none bg-slate-900">
+  <div class="flex h-full w-full items-center justify-center">
+    <div id="stage" class="relative overflow-hidden bg-black" style="font-size:1px">
+      <canvas id="game" class="block" tabindex="0" aria-label="Plappy Bird game"></canvas>
+
+      <button id="btn-board" class="pb-icon left-[8em] top-[8em] hidden" title="Leaderboard" aria-label="Leaderboard"><span class="pb-glyph">🏆</span></button>
+      <button id="btn-mute" class="pb-icon right-[8em] top-[8em] hidden" title="Sound" aria-label="Toggle sound"><span id="mute-glyph" class="pb-glyph">🔊</span></button>
+
+      <div id="over-actions" class="absolute left-0 right-0 hidden justify-center" style="top:80.5%;gap:12em">
+        <button id="btn-restart" class="pb-btn">Restart</button>
+        <button id="btn-board2" class="pb-btn">Leaders</button>
+      </div>
+
+      <div id="loading" class="pb-overlay"><p class="font-bold" style="font-size:16em">Loading…</p></div>
+
+      <form id="nick-form" class="pb-overlay hidden" autocomplete="off">
+        <p class="font-bold" style="font-size:22em">Who's playing?</p>
+        <input id="nick" class="pb-input" maxlength="16" placeholder="Your nickname" required>
+        <button class="pb-btn" type="submit">Play</button>
+        <p id="nick-err" class="text-red-300" style="font-size:12em"></p>
+      </form>
+
+      <div id="msg" class="pb-overlay hidden"><p id="msg-text" class="font-semibold" style="font-size:15em"></p></div>
+
+      <div id="board" class="pb-overlay hidden !justify-start !bg-slate-900/95" style="padding:24em 16em 16em;gap:10em">
+        <h2 class="font-bold" style="font-size:22em">Leaderboard</h2>
+        <div id="board-tabs" class="flex whitespace-nowrap" style="gap:5em;font-size:11em">
+          <button data-period="daily" class="rounded-full bg-white/15 px-[0.8em] py-[0.3em] font-semibold">Today</button>
+          <button data-period="weekly" class="rounded-full bg-white/15 px-[0.8em] py-[0.3em] font-semibold">Week</button>
+          <button data-period="all" class="rounded-full bg-white/15 px-[0.8em] py-[0.3em] font-semibold">All time</button>
+        </div>
+        <ol id="board-list" class="w-full flex-1 overflow-y-auto text-left" style="font-size:14em"></ol>
+        <p id="board-me" class="text-yellow-200" style="font-size:12em"></p>
+        <button id="board-close" class="pb-btn">Close</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

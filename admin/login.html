@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plappy Bird Admin · Sign in</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="flex min-h-screen items-center justify-center bg-slate-950 p-4 text-slate-100">
+  <form id="form" class="w-full max-w-sm space-y-4 rounded-2xl bg-slate-900 p-8 shadow-xl ring-1 ring-white/10">
+    <div>
+      <h1 class="text-xl font-bold">Plappy Bird <span class="text-amber-400">Admin</span></h1>
+      <p class="mt-1 text-sm text-slate-400">Sign in to manage the game.</p>
+    </div>
+    <label class="block text-sm">Username
+      <input name="username" autocomplete="username" required class="mt-1 w-full rounded-lg bg-slate-800 px-3 py-2 outline-none ring-1 ring-white/10 focus:ring-amber-400">
+    </label>
+    <label class="block text-sm">Password
+      <input name="password" type="password" autocomplete="current-password" required class="mt-1 w-full rounded-lg bg-slate-800 px-3 py-2 outline-none ring-1 ring-white/10 focus:ring-amber-400">
+    </label>
+    <p id="err" class="min-h-5 text-sm text-red-400" role="alert"></p>
+    <button class="w-full rounded-lg bg-amber-400 px-4 py-2 font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-50">Sign in</button>
+  </form>
+  <script type="module" src="/admin/js/login.js"></script>
+</body>
+</html>

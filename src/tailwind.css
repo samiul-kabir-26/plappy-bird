@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Game UI is sized in "virtual pixels": #stage sets font-size to the canvas scale, so 1em = 1 game px. */
+@layer components {
+  .pb-btn {
+    @apply cursor-pointer select-none rounded-[0.4em] border-[0.2em] border-[#533846] font-bold shadow-[0_0.2em_0_#533846] transition active:translate-y-[0.1em] active:shadow-[0_0.1em_0_#533846];
+    background: var(--btn, #e8a33d);
+    color: var(--btn-text, #fff);
+    font-size: 14em;
+    padding: 0.45em 1.1em;
+  }
+  .pb-icon {
+    @apply absolute flex cursor-pointer items-center justify-center rounded-full border-[0.12em] border-[#533846] bg-black/40 text-white backdrop-blur-sm transition hover:bg-black/60;
+    width: 32em;
+    height: 32em;
+  }
+  .pb-glyph { font-size: 16em; line-height: 1; }
+  .pb-overlay {
+    @apply absolute inset-0 flex flex-col items-center justify-center bg-black/70 text-center text-white;
+    padding: 20em;
+    gap: 12em;
+  }
+  .pb-input {
+    @apply w-full rounded-[0.3em] border-[0.15em] border-[#533846] bg-white px-[0.7em] py-[0.5em] text-center font-bold text-[#533846] outline-none;
+    font-size: 16em;
+  }
+}
